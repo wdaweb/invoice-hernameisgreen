@@ -9,8 +9,7 @@ foreach ($_POST as $key => $value){
     $temp2[]=$value;
 } */
 
-$dsn="mysql:host=localhost;dbname=invoice;charset=utf8";
-$pdo=new pdo($dsn, 'root', '');
+include_once "../base.php";
 
 
 
