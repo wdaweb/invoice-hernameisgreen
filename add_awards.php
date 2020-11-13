@@ -6,11 +6,11 @@
                  <th id="months">年月份</th>
                  <td headers="months" class="title">
                      <input type="number" name="year" min="<?=date("Y")-1;?>" max="<?=date("Y")+1?>" step="1" value="<?=date("Y");?>">
-                     <select name="" id="">
+                     <select name="period" id="">
                          <option value="1">01~02</option>
                          <option value="2">03~04</option>
                          <option value="3">05~06</option>
-                         <option value="4">07~07</option>
+                         <option value="4">07~08</option>
                          <option value="5">09~10</option>
                          <option value="6">11~12</option>
                      </select>月
@@ -37,9 +37,9 @@
              <tr>
                  <th id="firstPrize" rowspan="2">頭獎</th>
                  <td headers="firstPrize" class="number">
-                 <input type="number" name="first_prize" min="00000001" max="99999999">
-                 <input type="number" name="first_prize" min="00000001" max="99999999">
-                 <input type="number" name="first_prize" min="00000001" max="99999999">
+                 <input type="number" name="first_prize[]" min="00000001" max="99999999"><!-- 不填[]會自己自動加 -->
+                 <input type="number" name="first_prize[]" min="00000001" max="99999999">
+                 <input type="number" name="first_prize[]" min="00000001" max="99999999">
                  </td>
              </tr>
              <tr>
@@ -68,9 +68,9 @@
              <tr>
                  <th id="addSixPrize">增開六獎</th>
                  <td headers="addSixPrize" class="number"> 
-                 <input type="number" name="six_prize" min="00000001" max="99999999"> 
-                 <input type="number" name="six_prize" min="00000001" max="99999999"> 
-                 <input type="number" name="six_prize" min="00000001" max="99999999"> 
+                 <input type="number" name="six_prize[]" min="00000001" max="99999999"> 
+                 <input type="number" name="six_prize[]" min="00000001" max="99999999"> 
+                 <input type="number" name="six_prize[]" min="00000001" max="99999999"> 
                 </td>
              </tr>
 
