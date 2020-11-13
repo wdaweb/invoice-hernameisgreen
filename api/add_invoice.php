@@ -30,5 +30,5 @@ echo $sql;
 $pdo->exec($sql);
 
 echo "added success!";
-/* header("location:../index.php"); */
+header("location:../index.php?do=invoice_list");
 ?>
