@@ -46,7 +46,7 @@
                 <a href="index.php">回首頁
                 </a> </div>
         </div>
-        <div class="col-lg-8 col-md-12 d-flex justify-content-between mx-auto border p-3">
+        <div class="col-lg-8 col-md-12 d-flex flex-column justify-content-between mx-auto border p-3">
 
 
     <?php
