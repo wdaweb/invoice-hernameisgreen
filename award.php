@@ -30,6 +30,9 @@ $awards=$pdo->query("select * from award_numbers where year='$year' && period='$
 print_r($awards);
 echo"</pre>"; */
 /* $awards is an array while $number is a string */
+
+$all_res=-1;
+
 foreach($awards as $award){
     switch($award['type']){
         case 1:
@@ -37,6 +40,7 @@ foreach($awards as $award){
             if($award['number']==$number){
                 echo "<br>號碼=".$number."<br>";
                 echo "congrats! you've won the 特別獎!";
+
             }else{
                 echo "aww nope<br>";
             }
@@ -46,11 +50,12 @@ foreach($awards as $award){
             /* 1st prize */
             if($award['number']==$number){
                 echo "<br>號碼=".$number."<br>";
+                $all_res=1;
                 echo "congrats! you've won the 特獎!";
             }
         break;
         case 3:
-            $res=0;
+            $res=-1;
             for($i=5;$i>=0;$i--){
                 $target=mb_substr($award['number'], $i,(8-$i),'utf8' );
                 $mynumber=mb_substr($number, $i,(8-$i),'utf8' );
@@ -65,14 +70,21 @@ foreach($awards as $award){
 
             }
         }
-        echo "<br>號碼=".$number."<br>";
-        echo "congrats! you've won $res prize<br>";
+        if($res!=-1){
+            echo "<br>號碼=".$number."<br>";
+            echo "congrats! you've won {$awardStr[$i]} prize<br>";
+        }
+    
         break;
         case 4:
             if($award['number']==mb_substr($number,5,3,'utf8')){
                 echo "<br>號碼=".$number."<br>";
+                $all_res=1;
                 echo "中了增開六獎";
             }
         break;
     }
+}
+if($all_res==-1){
+    echo "sorry, nothing";
 }
