@@ -1,41 +1,6 @@
 <?php
 include "base.php";
 
-
-/* 函式有return值結果會直接給韓式本身，是一個陣列 */
-
-//"select * from invoices where id='9'";
-//$row=$pdo->query("select * from invoices where id='9'")->fetch();
-
-echo implode("&&", ['欄位1'=>'值1','欄位2'=>'值2', 'id' => '9']);
-echo "<hr>";
-
-$array=['欄位1'=>'值1','欄位2'=>'值2', 'id' => '9'];
-/* foreach($array as $key => $value){
-    echo $key. "= '".$value."'&&";
-} */
-
-//利用一個暫時的陣列來存放語句片段
-foreach($array as $key => $value){
-    /* $tmp[]="`".$key."`='".$value."'"; */
-
-    $tmp[]=sprintf("`%s` = '%s'",$key, $value);
-}
-print_r($tmp);
-echo "<br>";
-
-//使用implode把暫時陣列中的語句片段串成SQL會使用到的語句
-echo implode ("&&", $tmp);
-
-
-$row= find('invoices', '21');
-echo $row['code'].$row['number'];
-
-$row= find('invoices', ['code'=>'GD', 'number'=>'01589816']);
-echo $row['code'].$row['number'];
-
-
-
 /*取得單一資料的自訂函式*/
 
 function find($table, $id){
@@ -59,4 +24,69 @@ if(is_array($id)){
     $row= $pdo->query($sql)->fetch();
     return $row;
 }
+
+
+function all($table,...$arg){
+    global $pdo;
+
+/*     gettype($arg); */
+    $sql="select * from $table";
+
+    if(isset($arg[0])){
+    if (is_array($arg[0])){
+  /*   if (!empty($arg[0])){ */
+//製作會在where後面的句子字串0
+foreach($arg[0] as $key => $value){
+    $tmp[]=sprintf("`%s` = '%s'",$key, $value);
+
+} 
+$sql=$sql.implode("&&", $tmp);
+
+    }else{
+       /*  echo "arg[0]不存在或arg[0]不是陣列"; */
+       $sql=$sql.$arg[0];
+    }
+}
+    //製作會在where後面的句子字串
+    if(isset($arg[1])){
+        $sql=$sql.$arg[1];
+    }
+        //製作非陣列語句皆在sql後面
+/*     }else{
+        echo "arg[1]不存在";
+        //製作接在最後面的句子字串
+    } */
+    echo $sql. '<br>';
+    return $pdo->query($sql)->fetchAll();
+
+
+}
+/* } */
+function del($table, $id){
+    global $pdo;
+    $sql="delete from $table where";
+    if(is_array($id)){
+        foreach($id as $key => $value){
+            $tmp[]=sprintf("`%s`='%s'", $key, $value);
+
+     }$sql=$sql.implode('&&', $tmp);
+
+}else{
+    $sql=$sql."id='$id'";
+    
+}
+$row=$pdo->exec($sql);
+return $row;
+}
+
+
+/* echo "<hr>";
+print_r(all('invoices'));
+echo "<hr>";
+print_r(all('invoices'),['code'=>"GD", 'period' =>6]);
+echo "<hr>";
+print_r(all('invoices'),['code'=>"GD", 'period' =>6]);
+ */
+
+
 ?>
