@@ -8,7 +8,7 @@
 
 </head>
 
-<h2 class="text-center">最新獎號</h2>
+<h2 class="text-center mt-3">最新獎號</h2>
 
 
 <?php

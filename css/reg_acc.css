@@ -6,6 +6,7 @@ body {
   background-color: #787a77;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .container {

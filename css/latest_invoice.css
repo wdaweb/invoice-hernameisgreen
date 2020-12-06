@@ -4,11 +4,13 @@
 }
 
 table {
-    width: 50%;
-    height: 60%;
+    width: 60%;
+    height: 70%;
     border: 1px white solid;
     border-radius: 10px;
     line-height: 1.5;
+    padding: 1rem;
+   
 }
 
 th,
@@ -16,6 +18,7 @@ td {
     border: 1px white solid;
     border: 2px #ffb5a7 solid;
     background-color: #fcd5ce;
+    padding-left: 10px;
    
 }
 .pointers{

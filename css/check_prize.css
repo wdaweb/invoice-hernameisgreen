@@ -1,19 +1,21 @@
 *{
     overflow:scroll(y);
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .rec_table>tr,td{
     border: 1px white solid;
     background-color: #f9dcc4;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .rec_table{
     width: 40rem;
     text-align:center;
     margin: auto;
+    table-layout: fixed;
 }
-form{
-    
-}
+
 .period{
     border-radius: 10px;
 }
