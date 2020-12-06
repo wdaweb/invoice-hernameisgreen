@@ -1,34 +1,54 @@
 <?php
-//撰寫新增消費發票的程式碼
-//將發票的號碼及相關資訊寫入資料庫
 
-/* foreach($_POST as $key => $value){
-   $temp[]=$key;
+include_once "settings.php";
+
+$_SESSION['err']=[];
+
+/* 預防使用者沒填寫欄位 */
+function ghost($item, $msg='尚未填寫欄位'){
+if(empty($_POST[$item])){
+    $_SESSION['err'][$item]['empty']=$msg;
 }
-foreach ($_POST as $key => $value){
-    $temp2[]=$value;
-} */
+}
 
-include_once "../base.php";
+/* 預防使用者沒注意該欄需要填的長度 */
+function len($item,$norm, $msg='編號長度異常'){
+if ((strlen($_POST[$item]))>$norm){
+    $_SESSION['err'][$item]['len']=$msg;
+}
+}
+
+ghost('date');
+
+ghost('code');
+len('code', 2, '代碼應有兩個英文字母');
+
+ghost('number');
+len('number', 8, '號碼應有8個數字');
+
+ghost('payment');
 
 
 
-echo "<pre>";
-print_r(array_keys($_POST));
-echo"</pre>";
-/* echo "<pre>";
-print_r($temp);
-echo "</pre>"; */
-/* echo "<br>"; */
-/*  echo "insert into invoice (`".implode("`,`",$temp)."`)";
- echo "values (`".implode("`,`",$temp2)."`)"; */
-/*  echo "insert into invoice (`".implode("`,`",$_POST)."`)";
- echo "values (`".implode("`,`",$_POST)."`)"; */
-
-$sql="insert into invoices(`".implode("`,`",array_keys($_POST))."`) values('".implode("','",$_POST)."')";
-echo $sql;
+/* $sql="INSERT into `invoice`(`user_id`,`date`,`period`,`code`, `number`, `payment`) values ('$_SESSION[user_id]','$_POST[date]', '$_POST[period]', '$_POST[code]', '$_POST[number]', '$_POST[payment]')";
 $pdo->exec($sql);
+$inv="select id from invoice where `code`= '$_POST[code]'and `number`='$_POST[number]'";
+$search=$pdo->query($inv)->fetch(pdo::FETCH_ASSOC);
+$invoice_id=$search['id'];
+$another_sql="INSERT INTO `invoice_details` (`in_id`, `category`, `method`, `notes`) values ('$invoice_id', '$_POST[category]', '$_POST[method]', '$_POST[notes]' )"; */
 
-echo "added success!";
-header("location:../index.php?do=invoice_list");
-?>
+/* 
+如果沒有任何錯誤產生在err陣列中，就表示資料無誤可以新增了 */
+if (empty($_SESSION['err'])){
+    $sql="INSERT into `invoice`(`user_id`,`date`,`period`,`code`, `number`, `payment`) values ('$_SESSION[user_id]','$_POST[date]', '$_POST[period]', '$_POST[code]', '$_POST[number]', '$_POST[payment]')";
+$pdo->exec($sql);
+$inv="select id from invoice where `code`= '$_POST[code]'and `number`='$_POST[number]'";
+$search=$pdo->query($inv)->fetch(pdo::FETCH_ASSOC);
+$invoice_id=$search['id'];
+$another_sql="INSERT INTO `invoice_details` (`in_id`, `category`, `method`, `notes`) values ('$invoice_id', '$_POST[category]', '$_POST[method]', '$_POST[notes]' )";
+$pdo->exec($another_sql);
+    header("location: ../dashboard.php?go=records");
+}else{
+    header("location:../dashboard.php");
+} 
+

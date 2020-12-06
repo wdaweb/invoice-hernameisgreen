@@ -1,0 +1,13 @@
+*{
+    font-family: 'noto serif tc', monospace;
+    font-weight: 400;
+}
+
+
+th{
+    width: 5rem;
+}
+table{
+    overflow: auto;
+    
+}

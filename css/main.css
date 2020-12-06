@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.welcome{
+    height: 9rem;
+    width:18rem;
+    background-color: red;
+    text-transform:uppercase;
+    border: 1px solid transparent;
+    text-align: center;
+
+}
+.hello{
+    font-size: 2rem;
+}
+body{
+    font-family: 'Noto Sans TC', 'Roboto',monospace;
+    font-weight: 500;
+}
+.small{
+    font-size: 1.5rem;
+}
+/* .level_one{
+    background-color: red;
+} */
+.level_two{
+    background-color: orange;
+}
+.total{
+    
+    height:20rem;
+    width: 18rem;
+    border-radius: 10px;
+    margin-top: 5rem;
+}
+.deco{
+    background-image:linear-gradient(45deg, hsla(0, 79%, 72%, 1) 0%, hsla(28, 100%, 86%, 1) 100%);
+    background-size: 400%;
+    animation: bg-animation 3s infinite alternate;
+    height: 8rem;
+    width: 100%;
+    color: white;
+   
+    
+}
+@keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+  }
+.sum-numb{
+    margin-left: 4rem;
+    margin-top: 2rem; 
+    font-size: 36px;
+}
+.sub-t{
+    font-family: 'Noto Sans TC', 'Roboto',monospace;
+}
+.recent{
+    margin-top: 5rem;
+    height: 20rem;
+
+}
+table{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    background-color: hsla(28, 100%, 86%, 1);
+    font-family: 'Noto Sans TC', 'Roboto',monospace;
+    
+}
+th,tr,td{
+    border: 1px hsla(0, 79%, 72%, 1) solid;
+    border-collapse: collapse;
+
+}
+.deco2{
+    background-image:linear-gradient(45deg, hsla(0, 79%, 72%, 1) 0%, hsla(28, 100%, 86%, 1) 100%);
+    background-size: 400%;
+    animation: bg-animation 3s infinite alternate;
+    height: 4rem;
+    width: 100%;
+    color: white;
+   
+    
+}
+.quote{
+    height: 9rem;
+    font-size: 25px;
+    line-height: 3;
+    font-family:'Noto Sans TC', 'Roboto',monospace;
+}

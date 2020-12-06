@@ -1,0 +1,54 @@
+
+*{
+    font-family: 'Noto Sans TC', sans-serif;
+    overflow-y: hidden;
+}
+table{
+    /* width: 70%;
+    height:100%; */
+   /*  border: 1px white solid; */
+   width: 50%;
+   height: 60%;
+   border: 1px white solid;
+   border-radius: 10px;
+   line-height: 1.5;
+    
+}
+th,td{
+    border-collapse: collapse;
+    border: 2px #ffb5a7 solid;
+    background-color: #fcd5ce;
+    /* border-radius: 20px; */
+}
+input[type="number"]{
+    border: 1px transparent;
+    border-radius: 10px;
+}
+.period{
+    border: 1px transparent;
+    border-radius: 10px;
+}
+.sub{
+    border: 1px solid #f08080;
+    border-radius: 20px;
+    background-color:  #f08080;
+    
+    width: 7rem;
+    height: 2rem;
+}
+.sub:hover, .reset:hover{
+    transform:scale(1.05);
+}
+.reset{
+    border: 1px transparent;
+    border-radius: 20px;
+    background-color: #F9DCC4;
+    width: 7rem;
+    height: 2rem;
+    margin-left: 2rem;
+   
+}
+.form-box{
+    position: absolute;
+    left: 30rem;
+}

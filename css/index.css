@@ -1,0 +1,111 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #787a77;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  height: 80vh;
+  width: 70vw;
+}
+
+/* left side form section */
+.left {
+  background-color: #fcfdfc;
+  border-radius: 10px 0 0 10px;
+}
+/* right side signup section */
+.right {
+  background-image: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
+  filter: grayscale(40%);
+  background-size: cover;
+  color: white;
+  border-radius: 0 10px 10px 0;
+}
+.loginCap{
+  color: #5D9CBC;
+/*   background-color:pink; */
+}
+.loginw{
+  font-weight: 700;
+  font-size: 2rem;
+}
+/* the caption "signup" */
+.floatCap {
+  margin-top: 38%;
+}
+
+/* the signup button */
+.signup {
+  border: 1px solid white;
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+}
+/* change the default button color */
+.signupLink  {
+  color: white;
+  
+}
+.signupLink:hover{
+  color: white;
+  text-decoration: none;
+}
+.plchldr{
+  height: 30px;
+  width: 100%;
+}
+form {
+  /* background-color: pink; */
+  height: 70%;
+  width: 100%;
+  line-height: 4rem;
+}
+input[type="submit"]{
+  all: unset;
+  height: 3rem;
+  width: 80%;
+  border-radius: 20px;
+  background-color: #012E4B;
+  color: white;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+input[type="text"], input[type="password"]{
+  border-radius: 20px;
+}
+/* .sub-btn{
+  height: 3rem;
+  width: 80%;
+  border-radius: 20px;
+  background-color: #012E4B;
+  color: white;
+} */
+
+
+/* input[type="text"], input[type="password"] {
+  all: unset;
+  background: transparent;
+  padding-top: 20px;
+  border: none;
+  border-bottom: 1px solid #59505c;
+  width: 100%;
+  outline: none;
+  
+} */
+
+/* .form-control:focus {
+    all: unset;
+    color: #495057;
+    background-color: none;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #59505c;
+} */
+

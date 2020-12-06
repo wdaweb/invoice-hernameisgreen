@@ -1,0 +1,104 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #787a77;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  height: 80vh;
+  width: 70vw;
+}
+
+/* left side form section */
+.right {
+  background-color: #fcfdfc;
+  border-radius: 0 10px 10px 0;
+  
+  padding: 0;
+}
+/* right side signup section */
+.left {
+  background-image: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
+  filter: grayscale(40%);
+  background-size: cover;
+  color: white;
+ 
+  border-radius: 10px 0 0 10px;
+}
+.signupCap{
+  color: #5D9CBC;
+/*   background-color:pink; */
+}
+.signupw{
+  font-weight: 700;
+  font-size: 2rem;
+}
+/* the caption "signup" */
+.floatCap {
+  margin-top: 38%;
+}
+
+/* the signup button */
+.login {
+  border: 1px solid white;
+  width: 30%;
+  height: 2.5rem;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+}
+/* change the default button color */
+.loginLink  {
+  color: white;
+  
+}
+.loginLink:hover{
+  color: white;
+  text-decoration: none;
+}
+.plchldr{
+  height: 30px;
+  width: 100%;
+}
+.form-a {
+  /* background-color: pink; */
+  height: 70%;
+  width: 40rem;
+  line-height: 0rem;
+  margin:0;
+
+}
+.form-row{
+  padding:0;
+}
+input[type="submit"]{
+  all: unset;
+  height: 3rem;
+  width: 20%;
+  border-radius: 30px;
+  background-color: #012E4B;
+  color: white;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+}
+input[type="reset"]{
+  all: unset;
+  height: 3rem;
+  width: 20%;
+  border-radius: 30px;
+  background-color: #ccbdc0;
+  color: white;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+ 
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="email"]{
+  border-radius: 20px;
+}
+
+

@@ -1,0 +1,56 @@
+/* *{
+    overflow: hidden;
+    font-family: 'Noto Sans TC', 'Roboto',monospace;
+}  */
+.body{
+    background-color: #012e4b;
+    height: 100vh;
+    font-family: 'Noto Sans TC', 'Roboto',monospace;
+    
+}
+.plaza{
+  
+   background-color:  #F9DCC4;
+
+    z-index: 10;
+    height:100vh;
+    width: 100vw;
+}
+.mall{
+    background-color: #f7fefb;
+    height: 95vh;
+    width: 80vw;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+#sidebar{
+    background-color: #FFB5A7;
+
+    height: 100vh;
+    
+}
+
+
+.list-bar{
+    line-height: 2rem;
+}
+
+.nav-item:hover{
+    color: white;
+}
+
+
+.nav-link{
+    color: white;
+}
+
+::-webkit-scrollbar{
+    background: linear-gradient(180deg, hsla(27, 82%, 87%, 1) 0%, hsla(10, 100%, 83%, 1) 100%);
+    border-radius: 10px;
+    
+}
+/* ::-webkit-scrollbar-thumb{
+    background-color:#f9dcc4;
+} */

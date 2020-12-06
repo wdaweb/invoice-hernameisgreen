@@ -1,0 +1,57 @@
+*{
+    font-family: 'sans serif tc', monospace, arial;
+    overflow: hidden;
+}
+
+
+form {
+    height: 100%;
+    width: 60%;
+    margin-top: 4rem;
+
+}
+input{
+     border-radius: 20px;
+}
+.in_type{
+    width: 100%;
+    height: 50%;
+}
+.sub-btn{
+    margin-left:5px;
+    background-color: skyblue;
+    border-color: transparent;
+}
+.reset-btn{
+    margin-left: 5px;
+    border-color: transparent;
+    background-color: pink;
+}
+input[type="text"], input[type="date"], input[type="number"], input[type="textarea"]{
+    border-radius: 20px;
+  }
+
+  .category, .method, .period{
+    width: 100% !important;
+    height: calc(1.5em + .75rem + 2px) !important;
+    border-radius: 20px;
+    border:1px solid #ced4da;
+  }
+  .category:focus, .method:focus{
+    background-color: #fff!important;
+    border-color: #80bdff !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) !important;
+}
+  
+.right{
+    background-image:url("https://images.unsplash.com/photo-1511162384289-94da0b4013d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80");
+    object-fit: contain;
+}
+/* .left{
+    background-color: red;
+} */
+.row{
+    /* background-color: yellowgreen; */
+    height:100%;
+}
