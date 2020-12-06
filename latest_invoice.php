@@ -4,9 +4,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/latest_invoice.css">
+    <script src="https://kit.fontawesome.com/d4ac8916dc.js" crossorigin="anonymous"></script>
 
 </head>
+
 <h2 class="text-center">最新獎號</h2>
+
+
 <?php
 include_once "api/settings.php";
 
@@ -136,33 +140,41 @@ foreach ($awards as $award){
     </tbody>
 </table>
 <!--   </form> -->
-
-
-
-<?php
-if(($period+1)>6){
-?>
-<a href='?go=latest_invoice&pd=<?= $year+1 ?>-1'>next</a>
-<?php
-}else{
-?>
-<a href='?go=latest_invoice&pd=<?= $year ?>-<?= $period+1 ?>'>next</a>
-<?php
-}
-?>
-
-
+<div class=" text-center">
 <?php
 if(($period-1)<1){
     ?>
-<a href='?go=latest_invoice&pd=<?=$year-1?>-6'>prev</a>
+<a href='?go=latest_invoice&pd=<?=$year-1?>-6' class="pointers">
+prev
+</a>
 
 <?php
 }else{
     ?>
 
-<a href="?go=latest_invoice&pd=<?=$year?>-<?=$period-1?>">prev</a>
+<a href="?go=latest_invoice&pd=<?=$year?>-<?=$period-1?>" class="pointers">
+prev
+</a>
 
 <?php
 }
 ?>
+<?php
+if(($period+1)>6){
+?>
+<a href='?go=latest_invoice&pd=<?= $year+1 ?>-1' class="pointers">
+next
+</a>
+<?php
+}else{
+?>
+<a href='?go=latest_invoice&pd=<?= $year ?>-<?= $period+1 ?>' class="pointers">
+next
+</a>
+<?php
+}
+?>
+</div>
+
+
+

@@ -3,10 +3,10 @@
     <link rel="stylesheet" href="css/check_prize.css">
 </head>
 <div class="container vh-100 vw-100">
-
-<form action="api/val_prize.php" method="post" class="sub-form" class="d-block mx-auto">
+<h2 class="text-center">一鍵對獎</h2>
+<form action="api/val_prize.php" method="post" class="sub-form mt-2 text-center ">
 <input type="number" name="year" min="<?=date('Y')-1?>" step="1" max="<?=date('Y')+1?>"> 
-<select name="period">
+<select name="period" class="period">
     <option value="1">一，二月</option>
     <option value="2">三，四月</option>
     <option value="3">五，六月</option>
@@ -14,10 +14,10 @@
     <option value="5">九，十月</option>
     <option value="6">十一，十二月</option>
 </select>
-<input type="submit" value="送出">
+<input type="submit" value="送出" class="sub ml-3">
 </form>
 
-<table class="rec_table">
+<table class="rec_table mt-3">
 <?php
 include_once "api/settings.php";
 $_SESSION['congrats']=[];

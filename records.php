@@ -1,16 +1,15 @@
+
+<head>
+<link rel="stylesheet" href="css/records.css">
+</head>
 <?php
 include_once "api/settings.php";
 
 $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]' and `invoice`.`id`=`invoice_details`.`in_id` order by `invoice`.`date` desc";
 ?>
-
-<head>
-<link rel="stylesheet" href="css/record.css">
-</head>
-
 <body>
-    <h2 class="mx-auto text-center">歷史紀錄</h2>
-    <table class="record_list table-bordered mx-auto" >
+    <h2 class="mx-auto text-center mt-3">帳目紀錄</h2>
+    <table class="record_list  mx-auto mt-3" >
         <tr>
             <th>日期</th>
             <th>金額</th>
@@ -23,14 +22,23 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
 
         $rows = $pdo->query($sql)->fetchALL(pdo::FETCH_ASSOC);
         $row_count=(count($rows));
-        $results_per_page=10;
+       /*  echo ($row_count); */
+        $results_per_page=7;
         $number_of_pages=ceil($row_count/$results_per_page);
-        if(isset($_GET['page'])){
+        if(!isset($_GET['page'])){
             $page=1;
         }else{
             $page=$_GET['page'];
         }
+        $frst_result=($page-1)*$results_per_page;
+        $sql="select `invoice`.`id`,`invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]' and `invoice`.`id`=`invoice_details`.`in_id` order by `invoice`.`date` LIMIT ".$frst_result.','. $results_per_page;
+        
+        $rows = $pdo->query($sql)->fetchALL(pdo::FETCH_ASSOC);
        
+      
+
+
+
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['date'] . "</td>";
@@ -38,13 +46,32 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
             echo "<td>" . $row['category'] . "</td>";
             echo "<td>" . $row['method'] . "</td>";
             echo "<td>" . $row['notes'] . "</td>";
-            echo "<td>" ."<a class='btn' href='api/edit_record.php>"."edit"."</a>". 
-            "<a class='btn' href='api/delete_record.php'>"."delete"."</a>".
-            "</td>";
+            echo "<td>";
+            ?>
+              <button class="edit ">
+                <a class="text-light" href="?go=edit_record&id=<?=$row['id']?>">edit</a>
+            </button>
+            <button class="delete ">
+            <a class="text-light" href="?go=del_record&id=<?=$row['id']?>">delete</a>
+            </button>
+          <button class="check">
+            <a class="text-light" href="?go=check_inv_prize&id=<?=$row['id'];?>">check</a>
+            </button> 
+<?php
+            echo "</td>";
             echo "</tr>";
         }
         ?>
     
 
     </table>
+    <div class="text-center mt-3">
+    <?php
+    for ($page=1;$page<=$number_of_pages;$page++) {
+    ?>
+             <a href="?go=records&page=<?=$page?>" class="navi"><?=$page?></a> 
+     <?php
+          }
+?>
+</div>
 </body>

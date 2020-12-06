@@ -3,8 +3,25 @@
 }
 
 .rec_table>tr,td{
-    border: 1px black solid;
-    background-color: pink;
+    border: 1px white solid;
+    background-color: #f9dcc4;
+}
+.rec_table{
+    width: 40rem;
+    text-align:center;
+    margin: auto;
 }
 form{
-   
+    
+}
+.period{
+    border-radius: 10px;
+}
+input[type=number]{
+    border-radius: 20px;
+}
+.sub{
+    border-radius: 20px;
+    background-color: #f08080;
+    border:1px transparent;
+}

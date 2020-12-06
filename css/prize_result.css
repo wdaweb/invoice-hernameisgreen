@@ -1,0 +1,11 @@
+.bmo{
+    height:30rem;
+    width: 30rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
+.word-dep{
+  position: absolute;
+  top:15rem;
+  font-size: 30px;
+}

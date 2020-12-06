@@ -1,0 +1,40 @@
+*{
+    font-family: 'noto serif tc', monospace;
+    font-weight: 400;
+}
+
+
+th{
+    width: 5rem;
+}
+table{
+    overflow: auto;
+    text-align: center;
+    
+}
+th,td{
+    border-collapse: collapse;
+    border: 2px #ffb5a7 solid;
+    background-color: #fcd5ce;
+   
+}
+.navi{
+    color: #ffb5a7 !important ;
+}
+.edit{
+    background-color: #e8c2ca;
+    border: 1px solid #d1b3c4;
+    border-radius: 10px;
+}
+.delete{
+    background-color: #6ea1be;
+    border: 1px solid #5d9cbc;
+    border-radius: 10px;
+    margin-top:0.5rem;
+}
+.check{
+    background-color: #52b788;
+    border: 1px solid #40916c;
+    border-radius: 10px;
+    margin-top:0.5rem;
+}

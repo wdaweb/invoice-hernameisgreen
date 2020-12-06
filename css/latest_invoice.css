@@ -14,5 +14,10 @@ table {
 th,
 td {
     border: 1px white solid;
-    background-color: #ccbdc0;
+    border: 2px #ffb5a7 solid;
+    background-color: #fcd5ce;
+   
+}
+.pointers{
+    color: #f4978e !important;
 }
