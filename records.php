@@ -43,8 +43,39 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
             echo "<tr>";
             echo "<td>" . $row['date'] . "</td>";
             echo "<td>" . $row['payment'] . "</td>";
-            echo "<td>" . $row['category'] . "</td>";
-            echo "<td>" . $row['method'] . "</td>";
+            echo "<td>";
+            switch($row['category']){
+                case 1:
+                    echo "早餐";
+                break;
+                case 2:
+                 echo "午餐";
+                break;
+                case 3:
+                 echo "晚餐";
+                break;
+                case 4:
+                 echo "其他";
+                break;
+
+                } 
+            echo "</td>";
+            echo "<td>";
+            switch($row['method']){
+                case 1:
+                 echo "現金";
+                break;
+                case 2:
+                 echo "信用卡";
+                break;
+                case 3:
+                 echo "悠遊卡";
+                break;
+                case 4:
+                 echo "行動支付";
+                break;
+            } 
+             echo "</td>";
             echo "<td>" . $row['notes'] . "</td>";
             echo "<td>";
             ?>
