@@ -1,4 +1,4 @@
-# 統一發票紀錄及對獎系統
+# 統一發票紀錄及對獎系統 (作業位置: submit分支)
 
 ## 使用者情境：
 ```
@@ -51,8 +51,10 @@
    - code
    - number
    - period
-   - expend
+   - payment
    - year
+   - date
+   - create_time
 2. 獎號資料表- award_number
    - id
    - period
